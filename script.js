@@ -3,7 +3,8 @@ let btn = document.querySelector('button')
 let firstDice = document.querySelector('.img1')
 let secondDice = document.querySelector('.img2')
 
-btn.addEventListener('click',e=>{
+function playGame() {
+
     let firstDiceValue = Math.floor(Math.random()*6)+1
     let secondDiceValue = Math.floor(Math.random()*6)+1
     firstDice.setAttribute('src', `/images/dice${firstDiceValue}.png`)
@@ -14,6 +15,16 @@ btn.addEventListener('click',e=>{
     } else if (secondDiceValue > firstDiceValue) {
         heading.textContent = 'Second Player Wins! 🚩'
     } else {
-        heading.textContent = 'Draw, Refresh the page'
+        heading.textContent = 'Draw'
     }
+}
+
+document.addEventListener('keydown', e=>{
+    if (e.key.toLowerCase() == 'f' || e.key.toLowerCase()=='j') {
+        playGame()
+    }
+})
+
+btn.addEventListener('click',e=>{
+    playGame()
 })
