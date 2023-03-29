@@ -7,8 +7,8 @@ function playGame() {
 
     let firstDiceValue = Math.floor(Math.random()*6)+1
     let secondDiceValue = Math.floor(Math.random()*6)+1
-    firstDice.setAttribute('src', `/images/dice${firstDiceValue}.png`)
-    secondDice.setAttribute('src', `/images/dice${secondDiceValue}.png`)
+    firstDice.setAttribute('src', `images/dice${firstDiceValue}.png`)
+    secondDice.setAttribute('src', `images/dice${secondDiceValue}.png`)
     
     if (firstDiceValue > secondDiceValue) {
         heading.textContent = '🚩 First Player Wins!'
